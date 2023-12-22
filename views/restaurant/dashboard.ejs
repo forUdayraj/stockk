@@ -1,0 +1,17 @@
+<!-- views/restaurant/dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... (head content) ... -->
+</head>
+<body>
+  <h1>Restaurant Owner Dashboard</h1>
+  <h2>Restaurant: <%= restaurant.name %></h2>
+  <h3>Inventory</h3>
+  <ul>
+    <% restaurant.inventory.forEach(item => { %>
+      <li><%= item.item %>: <%= item.quantity %> <a href="/restaurant/update-inventory">Update</a></li>
+    <% }); %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- views/adminDashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Approved</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% inventoryItems.forEach(item => { %>
+        <tr>
+          <td><%= item.itemName %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.approved ? 'Yes' : 'No' %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <a href="/admin/approve-inventory/<%= itemId %>">Approve Update</a>
+</body>
+</html>
